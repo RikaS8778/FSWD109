@@ -54,8 +54,14 @@ print_word_with_index(word)
     Define a Python function named `average` that takes a variable number of arguments and returns the average of all the arguments passed.
 """
 def average(numbers: list) -> float:
+    
     return sum(numbers) / len(numbers)
 
 numbers = [88, 78, 100, 56, 69, 92]
 
 print(average(numbers))
+
+from statistics import mean
+avr = mean(numbers)
+print(avr)
+print(round(avr))
