@@ -119,8 +119,3 @@ def removeStudentFromList_1(students: list[str], name: str) -> list[str]:
 students_without_s4 = removeStudentFromList_1(students_2, "s3")
 print(students_without_s4)
 # ---other solution end---
-
-
-
-
-
