@@ -30,13 +30,6 @@ baseSalary = 50000
 mMultiplier = 1.4
 eMultiplier = 1.8
 bonusAmount = baseSalary * 0.2
-employees = {
-    'Kathy': Employee('Kathy', 26, baseSalary),
-    'Dale': Manager('Dale', 39, baseSalary * mMultiplier, 'Deveopment'),
-    'Micheal': Executive('Micheal', 37, baseSalary * eMultiplier, 'Account', int(bonusAmount))
-} 
-for x in employees:
-    print(employees[x])
     
 e1 = Employee('Amy', 29, baseSalary)
 print(e1)
@@ -44,3 +37,11 @@ e2 = Manager('Joel', 35, int(round(baseSalary*mMultiplier, 0)), 'Sales')
 print(e2)
 e3 = Executive('Caitlin', 42, int(round(baseSalary*eMultiplier, 0)), 'Marketing', int(bonusAmount))
 print(e3)
+
+employees = {
+    'Kathy': Employee('Kathy', 26, baseSalary),
+    'Dale': Manager('Dale', 39, baseSalary * mMultiplier, 'Deveopment'),
+    'Micheal': Executive('Micheal', 37, baseSalary * eMultiplier, 'Account', int(bonusAmount))
+} 
+for x in employees:
+    print(employees[x])
