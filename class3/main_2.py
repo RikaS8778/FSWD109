@@ -1,3 +1,33 @@
+"""
+Practice Question
+
+• Suppose you are developing a system to manage different types of employees in a company.
+
+• There are three types of employees: Employee, Manager, and Executive.
+
+• An Employee has attributes name, age, and salary.
+
+• A Manager is an Employee with an additional attribute department.
+
+• An Executive is a Manager with an additional attribute bonus.
+
+ 
+
+Implement these classes using inheritance in Python.
+
+• Write methods to:
+
+• Initialize the attributes of each class.
+
+• Display information about each type of employee.
+
+• Calculate the total earnings for each employee considering salary and bonus (if any).
+
+• Provide a method to change the salary for an Employee.
+"""
+
+
+
 baseSalary = 50000
 # mMultiplier = 1.4
 # eMultiplier = 1.3
@@ -16,6 +46,9 @@ class Employee:
     def calc_salary(self):
         return int(self.salary * self.multiplier)
     
+    def calcTotalEarnings(self):
+        return self.calc_salary()
+    
 class Manager(Employee):
     title = 'Manager'
     multiplier = 1.4
@@ -26,7 +59,8 @@ class Manager(Employee):
     def __str__(self):
         return super().__str__() + f' working in {self.department} as a {self.title}'
     
-    
+    def calcTotalEarnings(self):
+        pass
 class Executive(Manager):
     title = 'Executive Manager'
     multiplier = 1.8
@@ -39,6 +73,9 @@ class Executive(Manager):
     
     def calculate_bonus(self):
         return int(self.bonus)
+    
+    def calcTotalEarnings(self):
+        return super().calcTotalEarnings() + self.calculate_bonus()
     
 e1 = Employee('Amy', 29, baseSalary)
 print(e1)
@@ -54,3 +91,4 @@ employees = {
 } 
 for x in employees:
     print(employees[x])
+    

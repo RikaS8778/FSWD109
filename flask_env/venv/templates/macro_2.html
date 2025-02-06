@@ -1,0 +1,29 @@
+{% macro renderItems(posts, comments, commentsCount) %}
+    {%if posts%}
+        {%for post in posts %}
+            <h3> Title: {{ post.title }} </h3>
+            <p style="font-size: 15px;"> {{ post.content }} </p>
+            <p style="font-size: 10px;"> written by {{ post.user_name}}. date: {{ post.date }} {% if commentsCount%} comments: {{ commentsCount }} {% endif %}</p>
+            <hr />
+                {% if comments%}
+                    <div>
+                        <p style='margin-left: 10px;'>Comments</p>
+                        <ul>
+                        {% for comment in comments %}
+                            {%if comment.post_id == post.id%}
+                                <li style="font-size: 10px; list-style-type: none;"> {{ comment.user_name }}: {{ comment.content }} </li>
+                            {% endif %}
+                        {% endfor%}
+                        <ul>
+                    </div>
+                    <hr />
+                {% else %}
+                    <p style="font-size: 15px;"> Comment not found. </p>
+                {% endif%}
+        {% endfor %}
+    {%else%}
+        <p style="font-size: 20px;"> Posts not found. </p>
+    {% endif %}
+{% endmacro %}
+
+
